@@ -9,7 +9,7 @@ Uses the existing **Githubhgh/umf** Academic Project Page Template, preserving i
 - `index.html`: title, authors, affiliations, resource buttons, manuscript abstract, figure captions and BibTeX.
 - `static/css/index.css`: original UMF template stylesheet.
 - `static/css/dimot.css`: small DiMoT-specific layout adjustments.
-- `static/js/index.js`: copy-citation and scroll-to-top interactions.
+- `static/js/index.js`: gallery navigation, copy-citation and scroll-to-top interactions.
 - `static/images/fig1_panel_a_csa.png`, `fig1_panel_b_amd.png`: the two panels of manuscript Figure 1.
 - `static/images/fig2_tr.png`: manuscript Figure 2, the full method overview.
 
@@ -25,4 +25,4 @@ GitHub Pages deploys from `main`, `/(root)`. Committing changes to main updates 
 
 ## Motion gallery
 
-Eight DiMoT-only, six-second GIF crops and matching still posters are in static/gifs/. Six regular examples and two limitation examples are shown separately. Source timings and crop coordinates are recorded in the downloadable GIF manifest. GIFs play automatically when loaded. The gallery uses short captions and separates failure cases.
+Six DiMoT-only GIFs are displayed one at a time in the original template's left/right carousel style, with clickable indicator dots and arrow-key navigation. GIFs play automatically and each slide retains its complete original prompt. The two failure examples are omitted from the page; their existing source assets are retained in static/gifs/.

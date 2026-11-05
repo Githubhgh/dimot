@@ -33,8 +33,8 @@
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
   <link rel="stylesheet" href="static/css/dimot.css">
-  <link rel="stylesheet" href="static/css/gallery.css?v=full-prompts">
-  <script src="static/js/index.js" defer></script>
+  <link rel="stylesheet" href="static/css/gallery.css?v=carousel">
+  <script src="static/js/index.js?v=carousel" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -116,14 +116,36 @@
     </div>
   </section>
 
- <section class="section" id="gallery">
- <div class="container is-max-desktop">
- <h2 class="title is-3 has-text-centered">Motion Gallery</h2>
- <div class="motion-grid"><figure class="motion-card"><img src="static/gifs/shoving.gif" width="420" height="502" alt="The two guys engage in a physical altercation, shoving and confronting each other with harsh language." loading="lazy" decoding="async"><figcaption>The two guys engage in a physical altercation, shoving and confronting each other with harsh language.</figcaption></figure><figure class="motion-card"><img src="static/gifs/dismissing-gesture.gif" width="420" height="502" alt="The first person sprints towards the second, the second dismisses their request with a hand gesture." loading="lazy" decoding="async"><figcaption>The first person sprints towards the second, the second dismisses their request with a hand gesture.</figcaption></figure><figure class="motion-card"><img src="static/gifs/latin-dance.gif" width="420" height="502" alt="They are dancing latin, stomping their feet and swaying their hips." loading="lazy" decoding="async"><figcaption>They are dancing latin, stomping their feet and swaying their hips.</figcaption></figure><figure class="motion-card"><img src="static/gifs/playful-nudge.gif" width="420" height="502" alt="One person sneaks up behind the other person and playfully nudges them." loading="lazy" decoding="async"><figcaption>One person sneaks up behind the other person and playfully nudges them.</figcaption></figure><figure class="motion-card"><img src="static/gifs/accidental-bump.gif" width="420" height="502" alt="The first person walks and accidentally bumps into the other person." loading="lazy" decoding="async"><figcaption>The first person walks and accidentally bumps into the other person.</figcaption></figure><figure class="motion-card"><img src="static/gifs/having-fun.gif" width="420" height="502" alt="Two people are goofing around and having fun together." loading="lazy" decoding="async"><figcaption>Two people are goofing around and having fun together.</figcaption></figure></div>
- <h3 class="gallery-limitations-heading">Failure cases</h3>
- <div class="motion-grid limitations-grid"><figure class="motion-card"><img src="static/gifs/sit-ups.gif" width="420" height="502" alt="The two people perform sit-ups together." loading="lazy" decoding="async"><figcaption>The two people perform sit-ups together.</figcaption></figure><figure class="motion-card"><img src="static/gifs/horseback-riding.gif" width="420" height="502" alt="The two people are playing a game of horseback riding." loading="lazy" decoding="async"><figcaption>The two people are playing a game of horseback riding.</figcaption></figure></div>
- </div>
- </section>
+  <section class="section" id="gallery">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered" id="gallery-title">Motion Gallery</h2>
+      <div class="motion-carousel" role="region" aria-roledescription="carousel" aria-labelledby="gallery-title">
+        <div class="custom-carousel-wrapper">
+          <button type="button" class="carousel-arrow arrow-left" aria-label="Previous motion" aria-controls="motion-track">‹</button>
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="motion-track">
+            <figure class="carousel-slide motion-card" role="group" aria-roledescription="slide" aria-label="1 of 6" aria-hidden="false"><img src="static/gifs/shoving.gif" width="420" height="502" alt="The two guys engage in a physical altercation, shoving and confronting each other with harsh language." loading="lazy" decoding="async"><figcaption>The two guys engage in a physical altercation, shoving and confronting each other with harsh language.</figcaption></figure>
+            <figure class="carousel-slide motion-card" role="group" aria-roledescription="slide" aria-label="2 of 6" aria-hidden="true"><img src="static/gifs/dismissing-gesture.gif" width="420" height="502" alt="The first person sprints towards the second, the second dismisses their request with a hand gesture." loading="lazy" decoding="async"><figcaption>The first person sprints towards the second, the second dismisses their request with a hand gesture.</figcaption></figure>
+            <figure class="carousel-slide motion-card" role="group" aria-roledescription="slide" aria-label="3 of 6" aria-hidden="true"><img src="static/gifs/latin-dance.gif" width="420" height="502" alt="They are dancing latin, stomping their feet and swaying their hips." loading="lazy" decoding="async"><figcaption>They are dancing latin, stomping their feet and swaying their hips.</figcaption></figure>
+            <figure class="carousel-slide motion-card" role="group" aria-roledescription="slide" aria-label="4 of 6" aria-hidden="true"><img src="static/gifs/playful-nudge.gif" width="420" height="502" alt="One person sneaks up behind the other person and playfully nudges them." loading="lazy" decoding="async"><figcaption>One person sneaks up behind the other person and playfully nudges them.</figcaption></figure>
+            <figure class="carousel-slide motion-card" role="group" aria-roledescription="slide" aria-label="5 of 6" aria-hidden="true"><img src="static/gifs/accidental-bump.gif" width="420" height="502" alt="The first person walks and accidentally bumps into the other person." loading="lazy" decoding="async"><figcaption>The first person walks and accidentally bumps into the other person.</figcaption></figure>
+            <figure class="carousel-slide motion-card" role="group" aria-roledescription="slide" aria-label="6 of 6" aria-hidden="true"><img src="static/gifs/having-fun.gif" width="420" height="502" alt="Two people are goofing around and having fun together." loading="lazy" decoding="async"><figcaption>Two people are goofing around and having fun together.</figcaption></figure>
+            </div>
+          </div>
+          <button type="button" class="carousel-arrow arrow-right" aria-label="Next motion" aria-controls="motion-track">›</button>
+        </div>
+        <div class="carousel-indicators" aria-label="Choose a motion">
+          <button type="button" class="indicator active" aria-label="Show motion 1" aria-current="true"></button>
+          <button type="button" class="indicator" aria-label="Show motion 2" aria-current="false"></button>
+          <button type="button" class="indicator" aria-label="Show motion 3" aria-current="false"></button>
+          <button type="button" class="indicator" aria-label="Show motion 4" aria-current="false"></button>
+          <button type="button" class="indicator" aria-label="Show motion 5" aria-current="false"></button>
+          <button type="button" class="indicator" aria-label="Show motion 6" aria-current="false"></button>
+        </div>
+        <p class="is-sr-only" id="motion-status" role="status" aria-live="polite">Motion 1 of 6</p>
+      </div>
+    </div>
+  </section>
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">

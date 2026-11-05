@@ -1,2 +1,44 @@
-/* Minimal, automatically playing DiMoT GIF gallery. */
-.motion-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 24px;margin-top:2rem}.motion-card{margin:0!important;min-width:0;text-align:center}.motion-card img{display:block;width:100%;height:auto;aspect-ratio:420/502;object-fit:contain;background:#fff}.motion-card figcaption{margin-top:10px;font-size:.85rem;font-weight:400;line-height:1.7;color:var(--text-primary)}.motion-note{margin-top:5px;font-size:.76rem;line-height:1.65;color:var(--text-secondary)}.gallery-limitations-heading{margin:3rem 0 1.5rem;text-align:center;font-size:1rem;font-weight:500;color:var(--text-secondary)}.limitations-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:650px;margin:0 auto}.gallery-source{margin:1.8rem 0 0;text-align:center;font-size:.75rem;color:var(--text-secondary)}@media(max-width:768px){.motion-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}}@media(max-width:480px){.motion-grid,.limitations-grid{grid-template-columns:1fr}.motion-card{width:100%;max-width:360px;margin:0 auto!important}}
+/* Reuse the original UMF carousel with full prompts and autoplaying GIFs. */
+.motion-carousel .carousel-viewport {
+  min-width: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.motion-carousel .motion-card {
+  flex: 0 0 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+}
+.motion-card img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  aspect-ratio: 420 / 502;
+  object-fit: contain;
+  border-radius: 0;
+  background: #fff;
+}
+.motion-card figcaption {
+  max-width: 480px;
+  margin-top: 16px;
+  padding: 0 8px;
+  text-align: center;
+  font-size: .85rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+.motion-carousel .indicator {
+  padding: 0;
+  border: 0;
+}
+.motion-carousel button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-carousel .carousel-track { transition: none; }
+}
