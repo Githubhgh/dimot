@@ -25,4 +25,4 @@ GitHub Pages deploys from `main`, `/(root)`. Committing changes to main updates 
 
 ## Motion gallery
 
-Eight DiMoT-only, six-second GIF crops and matching still posters are in static/gifs/. Six regular examples and two limitation examples are shown separately. Source timings and crop coordinates are recorded in the downloadable GIF manifest. GIFs start paused; visitors can play/pause each or all examples and download each GIF.
+Eight DiMoT-only, six-second GIF crops and matching still posters are in static/gifs/. Six regular examples and two limitation examples are shown separately. Source timings and crop coordinates are recorded in the downloadable GIF manifest. GIFs play automatically when loaded. The gallery uses short captions and separates failure cases.
