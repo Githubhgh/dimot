@@ -1,110 +1,147 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="DiMoT improves the diffusability of motion tokenizers through Critic Spectral Adaptation and an Alpha-Flow Motion Decoder.">
-  <meta name="theme-color" content="#2563eb">
+  <title>Improving the Diffusability of Motion Tokenizer | NeurIPS 2026</title>
+  <meta name="description" content="DiMoT improves motion tokenizer diffusability through Critic Spectral Adaptation and one-step Alpha-Flow motion decoding.">
+  <meta name="author" content="Guanhe Huang, Songqiao Han, Tangzheng Lian, Oya Celiktutan">
+  <meta name="keywords" content="DiMoT, motion tokenizer, text-to-motion, latent diffusion, NeurIPS 2026">
   <link rel="canonical" href="https://githubhgh.github.io/dimot/">
-  <meta property="og:title" content="DiMoT — Improving the Diffusability of Motion Tokenizer">
-  <meta property="og:description" content="Improving text-to-motion generation through tokenizer post-training and one-step generative decoding.">
   <meta property="og:type" content="website">
+  <meta property="og:title" content="DiMoT: Improving the Diffusability of Motion Tokenizer">
+  <meta property="og:description" content="DiMoT improves motion tokenizer diffusability through Critic Spectral Adaptation and one-step Alpha-Flow motion decoding.">
   <meta property="og:url" content="https://githubhgh.github.io/dimot/">
+  <meta property="og:image" content="https://githubhgh.github.io/dimot/static/images/fig2_tr.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DiMoT: Improving the Diffusability of Motion Tokenizer">
+  <meta name="twitter:description" content="DiMoT improves motion tokenizer diffusability through Critic Spectral Adaptation and one-step Alpha-Flow motion decoding.">
+  <meta name="twitter:image" content="https://githubhgh.github.io/dimot/static/images/fig2_tr.png">
   <meta name="citation_title" content="Improving the Diffusability of Motion Tokenizer">
   <meta name="citation_author" content="Guanhe Huang">
   <meta name="citation_author" content="Songqiao Han">
   <meta name="citation_author" content="Tangzheng Lian">
   <meta name="citation_author" content="Oya Celiktutan">
-  <meta name="citation_conference_title" content="Advances in Neural Information Processing Systems">
   <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="Advances in Neural Information Processing Systems">
   <meta name="citation_pdf_url" content="https://openreview.net/pdf?id=fnQkgTUCzX">
-  <title>DiMoT | Improving the Diffusability of Motion Tokenizer</title>
+  <meta name="theme-color" content="#2563eb">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/dimot.css">
+  <script src="static/js/index.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="topbar">
-    <a class="wordmark" href="#top" aria-label="DiMoT home">DiMoT<span>.</span></a>
-    <nav aria-label="Page navigation">
-      <a href="#overview">Overview</a>
-      <a href="#abstract">Abstract</a>
-      <a href="#citation">Citation</a>
-    </nav>
-  </header>
-  <main id="main">
-    <!-- EDIT: Paper title, authors, affiliations and resource links. -->
-    <section class="hero container" id="top" aria-labelledby="paper-title">
-      <p class="venue"><span aria-hidden="true"></span> NeurIPS 2026 · Spotlight</p>
-      <p class="project-name">DiMoT</p>
-      <h1 id="paper-title">Improving the Diffusability<br class="desktop-break"> of Motion Tokenizer</h1>
-      <p class="hero-summary">Better motion generation starts with a better tokenizer.</p>
-      <div class="authors" aria-label="Authors">
-        <a href="https://openreview.net/profile?id=~Guanhe_Huang1">Guanhe Huang<sup>1,*</sup></a>
-        <a href="https://openreview.net/profile?id=~Songqiao_Han2">Songqiao Han<sup>2,*</sup></a>
-        <a href="https://openreview.net/profile?id=~Tangzheng_Lian1">Tangzheng Lian<sup>1</sup></a>
-        <a href="https://openreview.net/profile?id=~Oya_Celiktutan2">Oya Celiktutan<sup>1</sup></a>
-      </div>
-      <div class="affiliations">
-        <p><sup>1</sup> Department of Engineering <span class="affiliation-gap"><sup>2</sup> Department of Mathematics</span></p>
-        <p>King’s College London, London, United Kingdom</p>
-      </div>
-      <p class="equal">* Equal contribution</p>
-      <div class="resources">
-        <a class="button primary" href="https://openreview.net/pdf?id=fnQkgTUCzX"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h6"/></svg>Paper</a>
-        <a class="button secondary" href="https://openreview.net/forum?id=fnQkgTUCzX"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-6l-4 4zM7 8h10M7 12h7"/></svg>OpenReview</a>
-        <!-- EDIT: Replace this status with a link when the code is released. -->
-        <span class="button unavailable"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></svg>Code <span class="soon">coming soon</span></span>
-      </div>
-    </section>
-
-    <!-- EDIT: This HTML diagram can be replaced with your final overview figure. -->
-    <section class="overview container" id="overview" aria-labelledby="overview-title">
-      <div class="section-heading"><span class="eyebrow">THE IDEA</span><h2 id="overview-title">Post-train the tokenizer.<br>Preserve the motion.</h2>
-        <p>DiMoT addresses spectral mismatch in motion tokenizers through two complementary components: adapting the latent space and improving motion decoding.</p></div>
-      <div class="pipeline" aria-label="DiMoT method overview">
-        <div class="pipeline-top"><span>Diffusable Motion Tokenizer</span><span class="diagram-tag">DiMoT</span></div>
-        <div class="training-row">
-          <div class="node"><span class="node-kicker">INPUT</span><strong>Motion</strong><small>Training sequences</small></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node accent"><span class="node-kicker">CSA</span><strong>Adapted encoder</strong><small>Critic-guided spectral reweighting</small></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node"><span class="node-kicker">REPRESENTATION</span><strong>Latent tokens</strong><small>Easier for diffusion to model</small></div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <button class="scroll-to-top" id="scroll-top" title="Scroll to top" aria-label="Scroll to top">↑</button>
+  <main id="main-content">
+  <!-- Original UMF template: publication hero and resource buttons. -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Improving the Diffusability of Motion Tokenizer</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href="https://scholar.google.com/citations?hl=en&amp;user=5TJuGToAAAAJ">Guanhe Huang</a><sup>1,*</sup>,</span>
+              <span class="author-block"><a href="https://openreview.net/profile?id=~Songqiao_Han2">Songqiao Han</a><sup>2,*</sup>,</span>
+              <span class="author-block"><a href="https://openreview.net/profile?id=~Tangzheng_Lian1">Tangzheng Lian</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="https://oceliktutan.github.io/">Oya Celiktutan</a><sup>1</sup></span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block affiliations"><sup>1</sup>Department of Engineering, <sup>2</sup>Department of Mathematics<br>King’s College London, London, United Kingdom<br><span class="cvpr-badge">NeurIPS 2026 Spotlight</span></span>
+            </div>
+            <p class="equal-contribution">* Equal contribution</p>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block"><a href="https://openreview.net/pdf?id=fnQkgTUCzX" class="external-link button is-normal is-rounded is-dark"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h6"/></svg></span><span>Paper</span></a></span>
+                <span class="link-block"><a href="https://openreview.net/forum?id=fnQkgTUCzX" class="external-link button is-normal is-rounded is-dark"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-6l-4 4zM7 8h10M7 12h7"/></svg></span><span>OpenReview</span></a></span>
+                <!-- Replace this disabled status with the public code link when available. -->
+                <span class="link-block"><span class="button is-normal is-rounded is-dark code-status" aria-disabled="true"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></svg></span><span>Code (Coming Soon)</span></span></span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="diagram-divider"><span>Text-conditioned generation</span></div>
-        <div class="generation-row">
-          <div class="node"><span class="node-kicker">CONDITION</span><strong>Text prompt</strong><small>Describe the desired motion</small></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node"><span class="node-kicker">GENERATION</span><strong>Latent diffusion</strong><small>Generate motion tokens</small></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node accent"><span class="node-kicker">AMD</span><strong>Motion decoding</strong><small>One-step generative decoder</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Paper abstract, copied from the current manuscript without its footnote and project URL. -->
+  <section class="section hero is-light" id="abstract">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified"><p>Latent diffusion models paired with a variational auto-encoder (VAE) tokenizer have shown promising performance for efficient text-driven human motion generation. However, motion latent diffusion suffers from a generation-reconstruction trade-off: simply increasing tokenizer capacity enhances reconstruction but fails to proportionally improve text-conditioned generation quality. We assume this trade-off stems from a spectral mismatch inside the VAE tokenizer: the encoder yields a latent space biased toward high frequencies, and the decoder introduces temporal artifacts. In this paper, we propose the Diffusable Motion Tokenizer (DiMoT) to improve the diffusability of the tokenizer, rather than scaling up the diffusion backbone. To improve text-conditioned optimization, Critic Spectral Adaptation (CSA) leverages a pretrained diffusion model as the critic to suppress high-frequency latent energy. To preserve motion dynamics, the Alpha-Flow Motion Decoder (AMD) performs generative decoding via average-velocity prediction, enabling efficient one-step decoding. Extensive experiments demonstrate that DiMoT achieves state-of-the-art performance across various challenging text-to-motion benchmarks, yielding superior motion fidelity and text-motion alignment.</p></div>
         </div>
-        <div class="pipeline-bottom"><span class="motion-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>From text to human motion</span></div>
       </div>
-      <div class="method-notes">
-        <article><span class="number">01</span><h3>Critic Spectral Adaptation</h3><p>A pretrained, frozen diffusion model guides encoder adaptation. Spectral reweighting targets high-frequency latent shortcuts while preserving reconstruction fidelity.</p></article>
-        <article><span class="number">02</span><h3>Alpha-Flow Motion Decoder</h3><p>A latent-conditioned generative decoder learns average velocities with a curriculum, enabling one-step motion decoding while preserving essential temporal dynamics.</p></article>
+    </div>
+  </section>
+
+  <!-- Figure 1: the original two panels from the camera-ready source. -->
+  <section class="section" id="spectral-mismatch">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Spectral Mismatch in Motion Tokenizers</h2>
+      <figure class="paper-figure">
+        <div class="columns is-variable is-4 spectral-panels">
+          <div class="column is-half"><a class="figure-link" href="static/images/fig1_panel_a_csa.png" target="_blank" rel="noopener noreferrer" aria-label="Open latent spectral profile at full resolution"><img src="static/images/fig1_panel_a_csa.png" width="1817" height="1176" alt="Latent spectral profiles of ground truth, the encoder baseline, and the baseline with CSA." loading="lazy" decoding="async"></a><p class="has-text-centered panel-caption">(a) Latent spectral profile</p></div>
+          <div class="column is-half"><a class="figure-link" href="static/images/fig1_panel_b_amd.png" target="_blank" rel="noopener noreferrer" aria-label="Open motion spectral profile at full resolution"><img src="static/images/fig1_panel_b_amd.png" width="1817" height="1177" alt="Motion spectral profiles of ground truth, the decoder baseline, and the baseline with AMD." loading="lazy" decoding="async"></a><p class="has-text-centered panel-caption">(b) Motion spectral profile</p></div>
+        </div>
+        <figcaption><strong>Figure 1.</strong> (a) CSA uses a pretrained diffusion model as a frequency-specific critic to suppress high-frequency latent shortcuts. (b) AMD brings the reconstructed motion’s spectral profile closer to real motion dynamics.</figcaption>
+      </figure>
+      <div class="columns is-multiline contribution-boxes">
+        <div class="column is-6"><div class="box"><h3 class="title is-5">Critic Spectral Adaptation (CSA)</h3><p>Uses a frozen pretrained diffusion model as a text-conditioned critic to adapt the tokenizer encoder through spectral reweighting.</p></div></div>
+        <div class="column is-6"><div class="box"><h3 class="title is-5">Alpha-Flow Motion Decoder (AMD)</h3><p>Learns latent-conditioned average-velocity prediction with curriculum training for efficient one-step generative motion decoding.</p></div></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- EDIT: Abstract text and future figures / motion videos. -->
-    <section class="abstract-band" id="abstract"><div class="reading-width"><span class="eyebrow">THE PAPER</span><h2>Abstract</h2>
-      <p>Latent diffusion models paired with a variational auto-encoder (VAE) tokenizer have shown promising performance for efficient text-driven human motion generation. However, motion latent diffusion suffers from a generation–reconstruction trade-off: increasing tokenizer capacity enhances reconstruction but does not necessarily improve text-conditioned generation quality.</p>
-      <p>We propose the <strong>Diffusable Motion Tokenizer (DiMoT)</strong> to improve how easily the tokenizer’s latent space can be modeled by diffusion. <strong>Critic Spectral Adaptation (CSA)</strong> uses a pretrained diffusion model as a critic to suppress high-frequency latent shortcuts through spectral reweighting. The <strong>Alpha-Flow Motion Decoder (AMD)</strong> performs generative decoding through average-velocity prediction, enabling efficient one-step decoding. Experiments evaluate the approach on both single-person motion and two-person interaction benchmarks.</p>
-    </div></section>
+  <!-- Figure 2: the exact overview image currently included by main.tex. -->
+  <section class="section hero is-light" id="method">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Method Overview</h2>
+          <figure class="paper-figure">
+            <a class="figure-link" href="static/images/fig2_tr.png" target="_blank" rel="noopener noreferrer" aria-label="Open the DiMoT framework figure at full resolution"><img class="method-figure" src="static/images/fig2_tr.png" width="1734" height="1034" alt="DiMoT framework. Left: CSA with a frozen diffusion critic and spectral reweighting. Right: AMD with latent upsampling and Alpha-Flow curriculum learning." loading="lazy" decoding="async"></a>
+            <figcaption><strong>Figure 2.</strong> Overview of DiMoT. <strong>Left:</strong> CSA uses a pretrained latent diffusion model as a text-conditioned critic to adaptively suppress high-frequency shortcuts via spectral reweighting. <strong>Right:</strong> AMD uses curriculum learning over trajectory velocity fields at different time scales to learn one-step average-velocity generative decoding with latent conditions.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="citation reading-width" id="citation" aria-labelledby="citation-title">
-      <div class="citation-heading"><div><span class="eyebrow">REFERENCE</span><h2 id="citation-title">BibTeX</h2></div><button type="button" id="copy-citation">Copy BibTeX</button></div>
-      <pre><code id="bibtex">@inproceedings{huang2026dimot,
-  title     = {Improving the Diffusability of Motion Tokenizer},
-  author    = {Huang, Guanhe and Han, Songqiao and Lian, Tangzheng and Celiktutan, Oya},
-  booktitle = {Advances in Neural Information Processing Systems},
-  year      = {2026},
-  url       = {https://openreview.net/forum?id=fnQkgTUCzX}
-}</code></pre><p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
-    </section>
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header"><h2 class="title">BibTeX</h2><button class="copy-bibtex-btn" id="copy-citation" title="Copy BibTeX to clipboard"><span class="copy-text">Copy</span></button></div>
+      <pre id="bibtex-code"><code>@inproceedings{huang2026dimot,
+  title={Improving the Diffusability of Motion Tokenizer},
+  author={Huang, Guanhe and Han, Songqiao and Lian, Tangzheng and Celiktutan, Oya},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2026},
+  url={https://openreview.net/forum?id=fnQkgTUCzX}
+}</code></pre>
+      <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+    <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a> project page.
+            This website is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
   </main>
-  <footer><a class="wordmark" href="#top">DiMoT<span>.</span></a><p>King’s College London · NeurIPS 2026</p><a href="mailto:guanhe.huang@kcl.ac.uk">Contact</a></footer>
 </body>
 </html>
