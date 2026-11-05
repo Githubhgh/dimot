@@ -22,3 +22,7 @@ Replace the disabled code status with a real code link when released. Add future
 Run `python3 -m http.server 8765` in this directory, then visit http://localhost:8765/.
 
 GitHub Pages deploys from `main`, `/(root)`. Committing changes to main updates the live website. Keep the original UMF repository unchanged.
+
+## Motion gallery
+
+Eight DiMoT-only, six-second GIF crops and matching still posters are in static/gifs/. Six regular examples and two limitation examples are shown separately. Source timings and crop coordinates are recorded in the downloadable GIF manifest. GIFs start paused; visitors can play/pause each or all examples and download each GIF.

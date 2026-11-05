@@ -33,7 +33,9 @@
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
   <link rel="stylesheet" href="static/css/dimot.css">
+  <link rel="stylesheet" href="static/css/gallery.css">
   <script src="static/js/index.js" defer></script>
+  <script src="static/js/gallery.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -114,6 +116,43 @@
       </div>
     </div>
   </section>
+
+ <section class="section" id="gallery">
+ <div class="container is-max-desktop">
+ <h2 class="title is-3 has-text-centered">Motion Gallery</h2>
+ <p class="gallery-intro has-text-centered">DiMoT-only excerpts from the supplementary video. Select a GIF to play it.</p>
+ <div class="gallery-toolbar"><span>6-second excerpts · original playback speed</span><button class="button is-small" id="toggle-gallery" type="button" aria-pressed="false">Play all GIFs</button></div>
+ <div class="motion-grid"><article class="motion-card">
+ <div class="motion-media"><img src="static/gifs/shoving.jpg" data-poster="static/gifs/shoving.jpg" data-gif="static/gifs/shoving.gif" width="420" height="502" alt="DiMoT: Shoving interaction. Animation paused." loading="lazy" decoding="async"><button class="motion-toggle" type="button" aria-label="Play Shoving interaction GIF" aria-pressed="false">Play GIF</button></div>
+ <div class="motion-card-body"><h3>Shoving interaction</h3><p class="motion-prompt">The two guys engage in a physical altercation, shoving and confronting each other with harsh language.</p><a class="gif-download" href="static/gifs/shoving.gif" download>Download GIF</a></div>
+</article><article class="motion-card">
+ <div class="motion-media"><img src="static/gifs/dismissing-gesture.jpg" data-poster="static/gifs/dismissing-gesture.jpg" data-gif="static/gifs/dismissing-gesture.gif" width="420" height="502" alt="DiMoT: Dismissing gesture. Animation paused." loading="lazy" decoding="async"><button class="motion-toggle" type="button" aria-label="Play Dismissing gesture GIF" aria-pressed="false">Play GIF</button></div>
+ <div class="motion-card-body"><h3>Dismissing gesture</h3><p class="motion-prompt">The first person sprints towards the second, the second dismisses their request with a hand gesture.</p><a class="gif-download" href="static/gifs/dismissing-gesture.gif" download>Download GIF</a></div>
+</article><article class="motion-card">
+ <div class="motion-media"><img src="static/gifs/latin-dance.jpg" data-poster="static/gifs/latin-dance.jpg" data-gif="static/gifs/latin-dance.gif" width="420" height="502" alt="DiMoT: Latin dance. Animation paused." loading="lazy" decoding="async"><button class="motion-toggle" type="button" aria-label="Play Latin dance GIF" aria-pressed="false">Play GIF</button></div>
+ <div class="motion-card-body"><h3>Latin dance</h3><p class="motion-prompt">They are dancing latin, stomping their feet and swaying their hips.</p><a class="gif-download" href="static/gifs/latin-dance.gif" download>Download GIF</a></div>
+</article><article class="motion-card">
+ <div class="motion-media"><img src="static/gifs/playful-nudge.jpg" data-poster="static/gifs/playful-nudge.jpg" data-gif="static/gifs/playful-nudge.gif" width="420" height="502" alt="DiMoT: Playful nudge. Animation paused." loading="lazy" decoding="async"><button class="motion-toggle" type="button" aria-label="Play Playful nudge GIF" aria-pressed="false">Play GIF</button></div>
+ <div class="motion-card-body"><h3>Playful nudge</h3><p class="motion-prompt">One person sneaks up behind the other person and playfully nudges them.</p><a class="gif-download" href="static/gifs/playful-nudge.gif" download>Download GIF</a></div>
+</article><article class="motion-card">
+ <div class="motion-media"><img src="static/gifs/accidental-bump.jpg" data-poster="static/gifs/accidental-bump.jpg" data-gif="static/gifs/accidental-bump.gif" width="420" height="502" alt="DiMoT: Accidental bump. Animation paused." loading="lazy" decoding="async"><button class="motion-toggle" type="button" aria-label="Play Accidental bump GIF" aria-pressed="false">Play GIF</button></div>
+ <div class="motion-card-body"><h3>Accidental bump</h3><p class="motion-prompt">The first person walks and accidentally bumps into the other person.</p><a class="gif-download" href="static/gifs/accidental-bump.gif" download>Download GIF</a></div>
+</article><article class="motion-card">
+ <div class="motion-media"><img src="static/gifs/having-fun.jpg" data-poster="static/gifs/having-fun.jpg" data-gif="static/gifs/having-fun.gif" width="420" height="502" alt="DiMoT: Having fun together. Animation paused." loading="lazy" decoding="async"><button class="motion-toggle" type="button" aria-label="Play Having fun together GIF" aria-pressed="false">Play GIF</button></div>
+ <div class="motion-card-body"><h3>Having fun together</h3><p class="motion-prompt">Two people are goofing around and having fun together.</p><a class="gif-download" href="static/gifs/having-fun.gif" download>Download GIF</a></div>
+</article></div>
+ <h3 class="title is-4 has-text-centered gallery-limitations-heading">Limitations</h3>
+ <p class="gallery-intro has-text-centered">The supplementary video also highlights challenging cases. These examples retain that context.</p>
+ <div class="motion-grid limitations-grid"><article class="motion-card">
+ <div class="motion-media"><img src="static/gifs/sit-ups.jpg" data-poster="static/gifs/sit-ups.jpg" data-gif="static/gifs/sit-ups.gif" width="420" height="502" alt="DiMoT: Sit-ups together. Animation paused." loading="lazy" decoding="async"><button class="motion-toggle" type="button" aria-label="Play Sit-ups together GIF" aria-pressed="false">Play GIF</button></div>
+ <div class="motion-card-body"><h3>Sit-ups together</h3><p class="motion-prompt">The two people perform sit-ups together.</p><p class="gallery-limitation">Limitation: hand–head interpenetration remains visible.</p><a class="gif-download" href="static/gifs/sit-ups.gif" download>Download GIF</a></div>
+</article><article class="motion-card">
+ <div class="motion-media"><img src="static/gifs/horseback-riding.jpg" data-poster="static/gifs/horseback-riding.jpg" data-gif="static/gifs/horseback-riding.gif" width="420" height="502" alt="DiMoT: Horseback riding. Animation paused." loading="lazy" decoding="async"><button class="motion-toggle" type="button" aria-label="Play Horseback riding GIF" aria-pressed="false">Play GIF</button></div>
+ <div class="motion-card-body"><h3>Horseback riding</h3><p class="motion-prompt">The two people are playing a game of horseback riding.</p><p class="gallery-limitation">Failure case: the intended horseback-riding interaction is not reproduced. The supplementary video identifies the rare horseback concept and complex vertical arrangement of multiple people as remaining limitations.</p><a class="gif-download" href="static/gifs/horseback-riding.gif" download>Download GIF</a></div>
+</article></div>
+ <p class="gallery-source">Source: <a href="https://openreview.net/attachment?id=fnQkgTUCzX&amp;name=supplementary_material">OpenReview supplementary material</a>. Only the rightmost DiMoT viewport is shown; other methods and whole-comparison captions are outside these crops. GIFs contain no audio.</p>
+ </div>
+ </section>
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
